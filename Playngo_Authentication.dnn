@@ -1,0 +1,85 @@
+﻿<dotnetnuke type="Package" version="5.0"> 
+	<packages>
+		<package name="Playngo_Authentication" type="Module"  version="01.00.00">
+			<friendlyName>Playngo_Authentication</friendlyName>
+			<description>
+				<![CDATA[Diversified themes & display effects along with rich configuration options will help you create your dream sites much easier with better compatibility, and you will find you will hardly tear yourself away from it. Authentication comes with as many as 5 different themes, dozens of display effects and thousands of options, with all of these, you will enjoy the endless possibilities.
+        <br />
+        Support Email: <a  href="mailto:dnnskindev@gmail.com" title="Email">dnnskindev@gmail.com</a> Our Site: <a  target="_blank" href="http://www.Playngo.net" title="Email">www.Playngo.net</a>
+        ]]>
+			</description>
+			<iconFile>DesktopModules/Playngo_Authentication/Resource/images/authentication.png</iconFile>
+			<owner>
+				<name>Playngo.net</name>
+				<organization>Playngo.net Corporation</organization>
+				<url>
+					<![CDATA[http://www.Playngo.net]]>
+				</url>
+				<email>
+					<![CDATA[dnnskindev@gmail.com]]>
+				</email>
+			</owner>
+			<license src="license.txt" />
+			<releaseNotes src="ReleaseNotes.txt"/>
+			<azureCompatible>true</azureCompatible>
+      <dependencies>
+        <dependency type="CoreVersion">08.00.00</dependency>
+      </dependencies>
+			<components>
+				<component type="Module">
+					<desktopModule>
+						<moduleName>Playngo_Authentication</moduleName>
+						<foldername>Playngo_Authentication</foldername>
+						<businessControllerClass />
+						<supportedFeatures>
+							<supportedFeature type="Portable" />
+							<supportedFeature type="Searchable" />
+						</supportedFeatures>
+						<moduleDefinitions>
+							<moduleDefinition>
+								<friendlyName>Account Login</friendlyName>
+								<defaultCacheTime>0</defaultCacheTime>
+								<moduleControls>
+									<moduleControl>
+										<controlKey />
+										<controlSrc>DesktopModules/Playngo_Authentication/View_Index.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle />
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl />
+										<viewOrder>0</viewOrder>
+									</moduleControl>
+								</moduleControls>
+							</moduleDefinition>
+						</moduleDefinitions>
+					</desktopModule>
+					<eventMessage>
+						<processorType>DotNetNuke.Entities.Modules.EventMessageProcessor, DotNetNuke</processorType>
+						<processorCommand>UpgradeModule</processorCommand>
+						<attributes />
+					</eventMessage>
+				</component>
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\Playngo_Authentication\</basePath>
+						<resourceFile>
+							<name>ResourceFile.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+				<component type="Assembly">
+					<assemblies>
+						<assembly>
+							<path>bin</path>
+							<name>Playngo.Modules.Authentication.dll</name>
+							<version>01.00.00</version>
+						</assembly>
+					</assemblies>
+				</component>
+			</components>
+		</package>
+
+ 
+	</packages>
+</dotnetnuke>

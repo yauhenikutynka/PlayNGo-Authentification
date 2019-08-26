@@ -1,0 +1,209 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91E7C16C-9DDD-430D-B425-87F8D8F2F3C3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Playngo.Modules.Authentication</RootNamespace>
+    <AssemblyName>Playngo.Modules.Authentication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetNuke">
+      <HintPath>..\..\bin\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Instrumentation">
+      <HintPath>..\..\bin\DotNetNuke.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Web">
+      <HintPath>..\..\bin\DotNetNuke.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Web.Client">
+      <HintPath>..\..\bin\DotNetNuke.Web.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.WebControls">
+      <HintPath>..\..\bin\DotNetNuke.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Website">
+      <HintPath>..\..\bin\DotNetNuke.Website.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.WebUtility">
+      <HintPath>..\..\bin\DotNetNuke.WebUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="Authentication.ascx" />
+    <Content Include="Login.ascx" />
+    <Content Include="Resource\Images\appStore.png" />
+    <Content Include="Resource\Images\authentication.png" />
+    <Content Include="license.txt" />
+    <Content Include="ReleaseNotes.txt" />
+    <Content Include="Resource\Images\googlePlay.png" />
+    <Content Include="Resource\Images\socialLoginbuttons-icons.png" />
+    <Content Include="Resource\Images\socialLoginbuttons-repeatingbg.png" />
+    <Content Include="Logoff.ascx" />
+    <Content Include="Resource\css\module.css" />
+    <Content Include="View_GoogleTwoFactor.ascx" />
+    <Content Include="View_Index.ascx" />
+    <Content Include="View_Login.ascx" />
+    <Content Include="View_GoogleQR.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication.ascx.cs">
+      <DependentUpon>Authentication.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication.ascx.designer.cs">
+      <DependentUpon>Authentication.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Cores\BaseModule.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cores\Common.cs" />
+    <Compile Include="Cores\CryptionHelper.cs" />
+    <Compile Include="Cores\TwoFactor\iTwoFactor.cs" />
+    <Compile Include="Cores\TwoFactor\SetupCode.cs" />
+    <Compile Include="Cores\TwoFactor\Google\GoogleTwoFactor.cs" />
+    <Compile Include="Cores\WebHelper.cs" />
+    <Compile Include="Cores\xUserTime.cs" />
+    <Compile Include="Login.ascx.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.ascx.designer.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Logoff.ascx.cs">
+      <DependentUpon>Logoff.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logoff.ascx.designer.cs">
+      <DependentUpon>Logoff.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View_GoogleTwoFactor.ascx.cs">
+      <DependentUpon>View_GoogleTwoFactor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_GoogleTwoFactor.ascx.designer.cs">
+      <DependentUpon>View_GoogleTwoFactor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Index.ascx.cs">
+      <DependentUpon>View_Index.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_Index.ascx.designer.cs">
+      <DependentUpon>View_Index.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Login.ascx.cs">
+      <DependentUpon>View_Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_Login.ascx.designer.cs">
+      <DependentUpon>View_Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View_GoogleQR.ascx.cs">
+      <DependentUpon>View_GoogleQR.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_GoogleQR.ascx.designer.cs">
+      <DependentUpon>View_GoogleQR.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Authentication.ascx.resx" />
+    <Content Include="App_LocalResources\View_Login.ascx.resx" />
+    <Content Include="App_LocalResources\Logoff.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Playngo_Authentication.dnn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Login.ascx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59213</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59213/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
