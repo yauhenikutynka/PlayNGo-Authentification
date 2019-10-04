@@ -8,7 +8,7 @@ namespace Playngo.Modules.Authentication
 {
     public partial class View_GoogleTwoFactor : BaseModule
     {
-     
+
 
         private String _TwoFactorCode = String.Empty;
         /// <summary>
@@ -18,7 +18,7 @@ namespace Playngo.Modules.Authentication
         {
             get
             {
-                if(String.IsNullOrEmpty(_TwoFactorCode))
+                if (String.IsNullOrEmpty(_TwoFactorCode))
                 {
                     _TwoFactorCode = GetUserProfile(TwoFactorUserItem, "TwoFactorCode");
                 }
@@ -75,7 +75,8 @@ namespace Playngo.Modules.Authentication
                         //User Login
                         UserController.UserLogin(PortalId, TwoFactorUserItem, PortalSettings.PortalName, WebHelper.UserHost, false);
                         //Redirect return url or index url
-                        Response.Redirect(GetRedirectUrl());
+                        try { Response.Redirect(GetRedirectUrl()); }
+                        finally { }
                     }
                 }
                 else

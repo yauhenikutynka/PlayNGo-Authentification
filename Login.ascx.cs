@@ -307,7 +307,8 @@ namespace Playngo.Modules.Authentication
                         if (String.IsNullOrEmpty(EnableTwoFactor) || EnableTwoFactor.ToLower() == "true")
                         {
                             //go two factor page
-                            Response.Redirect(LoginURL(objUser.UserID, objUser.LastModifiedOnDate));
+                            try { Response.Redirect(LoginURL(objUser.UserID, objUser.LastModifiedOnDate)); }
+                            finally { }
                         }
                     }
                 }

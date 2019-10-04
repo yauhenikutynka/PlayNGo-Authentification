@@ -66,10 +66,6 @@ namespace Playngo.Modules.Authentication
             return Re_Str;
         }
 
-
-
-
-
         /// <summary>
         /// Replace String
         /// </summary>
@@ -79,20 +75,7 @@ namespace Playngo.Modules.Authentication
         /// <returns></returns>
         public static string ReplaceNoCase(string realaceValue, string oldValue, string newValue)  
         {
-            return Microsoft.VisualBasic.Strings.Replace(realaceValue, oldValue, newValue, 1, -1, Microsoft.VisualBasic.CompareMethod.Text);
+            return realaceValue.Replace(oldValue, newValue);
         }
-
-
-
-
-
-
-
-
-
-
-
- 
-
     }
 }

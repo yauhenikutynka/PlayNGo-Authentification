@@ -87,7 +87,8 @@ namespace Playngo.Modules.Authentication
                         //User Login
                         UserController.UserLogin(PortalId, TwoFactorUserItem, PortalSettings.PortalName, WebHelper.UserHost, false);
                         //Redirect return url or index url
-                        Response.Redirect(GetRedirectUrl());
+                        try { Response.Redirect(GetRedirectUrl()); }
+                        finally { }
                     }
                 }
                 else
